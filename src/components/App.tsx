@@ -1,10 +1,14 @@
 import * as React from 'react'
 import './App.css'
 
+import Table from './Table'
+
 class App extends React.Component {
   public render() {
     return (
-      <h1>Hello, World!</h1>
+      <div className="app-container">
+        <Table headerTitle={ "Demo Table" } />
+      </div>
     )
   }
 }

@@ -6,3 +6,9 @@ html, body {
   margin: 0px;
   position: relative;
 }
+
+.app-container {
+  margin: 0 auto;
+  width: 60%;
+  border: 1px solid black;
+}
