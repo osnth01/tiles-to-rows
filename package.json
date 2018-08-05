@@ -63,5 +63,5 @@
     "setupFiles": [
       "<rootDir>/setup/setup.js"
     ]
-}
+  }
 }
