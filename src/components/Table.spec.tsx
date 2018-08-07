@@ -5,7 +5,7 @@ import { shallow } from 'enzyme'
 
 function setup(props: TableProps) {
   const component = shallow(<Table headerTitle={props.headerTitle} />)
-  const header = component.find('h2')
+  const header = component.find('h3')
 
   return {
     component,

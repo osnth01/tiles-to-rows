@@ -7,7 +7,8 @@ class App extends React.Component {
   public render() {
     return (
       <div className="app-container">
-        <Table headerTitle={ "Demo Table" } />
+        <h2 className="text-center">Tiles to Rows Demo</h2>
+        <Table headerTitle={ "My Cool Table" } />
       </div>
     )
   }

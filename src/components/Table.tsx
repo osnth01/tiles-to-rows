@@ -8,7 +8,7 @@ export interface TableProps {
 const Table: React.SFC<TableProps> = (props) => (
   <div className="table">
     <div className="table__header">
-      <h2>{ props.headerTitle }</h2>
+      <h3>{ props.headerTitle }</h3>
     </div>
   </div>
 )

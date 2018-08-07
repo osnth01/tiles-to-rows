@@ -11,9 +11,9 @@ function setup() {
 }
 
 describe('App component', () => {
-  it('should say "Hello, World!"', () => {
+  it('should say "Tiles to Rows Demo"', () => {
     const { component } = setup()
 
-    expect(component.text()).toContain("Hello, World!")
+    expect(component.text()).toContain("Tiles to Rows Demo")
   })
 })
