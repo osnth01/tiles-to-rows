@@ -4,10 +4,11 @@ import './App.css'
 
 import Table from './Table'
 import { ITableRow } from './types/table'
+import StatusBoard from './StatusBoard'
 
 export enum TableMode {
-  rows,
-  tiles
+  rows = 'rows',
+  tiles = 'tiles'
 }
 
 export interface AppProps {
@@ -42,19 +43,23 @@ class App extends React.Component<AppProps, AppState> {
           Add row
         </button>
         <button
-          className="tiles-mode-button"
-          onClick={ () => { this.switchMode(TableMode.tiles) } }
-          disabled={ this.state.tableMode === TableMode.tiles }
-        >
-          Tiles mode
-        </button>
-        <button
           className="rows-mode-button"
           onClick={ () => { this.switchMode(TableMode.rows) } }
           disabled={ this.state.tableMode === TableMode.rows }
         >
           Rows mode
         </button>
+        <button
+          className="tiles-mode-button"
+          onClick={ () => { this.switchMode(TableMode.tiles) } }
+          disabled={ this.state.tableMode === TableMode.tiles }
+        >
+          Tiles mode
+        </button>
+        <StatusBoard
+          rows={ this.state.rows }
+          tableMode={ this.state.tableMode.toString() }
+        />
         <Table
           headerTitle={ "My Cool Table" }
           rows={ this.state.rows }
