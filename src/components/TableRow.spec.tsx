@@ -1,11 +1,12 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import TableRow from './TableRow'
-import { ITableRow } from './types/table'
+import { ITableRowProps } from './TableRow'
+import { TableMode } from './types/table'
 
-function setup(props: ITableRow) {
+function setup(props: ITableRowProps) {
   const component = shallow(
-    <TableRow id={ props.id } mode={ props.mode }/>
+    <TableRow mode={ props.mode }/>
   )
 
   return {
@@ -15,9 +16,8 @@ function setup(props: ITableRow) {
 
 describe('TableRow component', () => {
   it('should render "Row"', () => {
-    const props: ITableRow = {
-      id: 'id',
-      mode: 'tiles'
+    const props: ITableRowProps = {
+      mode: TableMode.tiles
     }
 
     const { component } = setup(props)
@@ -26,9 +26,8 @@ describe('TableRow component', () => {
   })
 
   it('should have the class `.table__content__row--tile` if tile mode', () => {
-    const props: ITableRow = {
-      id: 'id',
-      mode: 'tiles'
+    const props: ITableRowProps = {
+      mode: TableMode.tiles
     }
 
     const { component } = setup(props)

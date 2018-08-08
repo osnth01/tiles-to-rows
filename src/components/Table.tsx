@@ -1,7 +1,13 @@
 import * as React from 'react'
 import './Table.css'
-import { ITableProps, ITableRow } from './types/table'
+import { TableMode, ITableRow } from './types/table'
 import TableRow from './TableRow'
+
+export interface ITableProps {
+  headerTitle: string
+  rows: ITableRow[],
+  tableMode: TableMode
+}
 
 const Table: React.SFC<ITableProps> = (props) => (
   <div className="table">
@@ -13,9 +19,8 @@ const Table: React.SFC<ITableProps> = (props) => (
         props.rows.map((row: ITableRow) => {
           return (
             <TableRow
-              id={ row.id }
-              mode={ row.mode }
               key={ row.id }
+              mode={ props.tableMode }
             />
           )
         })

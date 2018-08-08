@@ -25,7 +25,7 @@ describe('App component', () => {
 
     addRowButton.simulate('click')
 
-    const rows: ITableRow[]  = component.state('rows')
+    const rows: ITableRow[] = component.state('rows')
 
     expect(rows.length).toBe(1)
   })

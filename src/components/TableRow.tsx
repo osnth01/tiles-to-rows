@@ -1,10 +1,14 @@
 import * as React from 'react'
 import './TableRow.css'
-import { ITableRow } from './types/table'
+import { TableMode } from './types/table'
 
-const TableRow: React.SFC<ITableRow> = (props) => {
+export interface ITableRowProps {
+  mode: TableMode
+}
+
+const TableRow: React.SFC<ITableRowProps> = (props) => {
   let rowStyle = "table__content__row"
-  if (props.mode === "tiles") {
+  if (props.mode === TableMode.tiles) {
     rowStyle += " table__content__row--tile"
   }
   return (

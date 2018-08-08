@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Table from './Table'
-import { ITableProps, ITableRow } from './types/table'
+import { ITableProps } from './Table'
+import { ITableRow, TableMode } from './types/table'
 import { render } from 'enzyme'
 
 function setup(props: ITableProps) {
@@ -19,22 +20,23 @@ describe('Table component', () => {
   let headerTitle: string
   let tableProps: ITableProps
   let tableRows: ITableRow[]
+  let mode: TableMode
 
   beforeEach(() => {
     headerTitle = "My Table"
     tableRows = [
       {
-        id: '1',
-        mode: 'tiles'
+        id: '1'
       },
       {
-        id: '2',
-        mode: 'tiles'
-      },
+        id: '2'
+      }
     ]
+    mode = TableMode.rows
     tableProps = {
       headerTitle,
-      rows: tableRows
+      rows: tableRows,
+      tableMode: mode
     }
   })
 
