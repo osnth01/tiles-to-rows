@@ -1,0 +1,12 @@
+.status-board {
+  position: fixed;
+  width: 300px;
+  background: gray;
+  height: 100%;
+  top: 0px;
+  right: -300px;
+}
+
+.status-board--active {
+  right: 0px;
+}

@@ -56,17 +56,21 @@ class App extends React.Component<AppProps, AppState> {
         >
           Tiles mode
         </button>
-        <StatusBoard
-          rows={ this.state.rows }
-          tableMode={ this.state.tableMode.toString() }
-        />
         <Table
           headerTitle={ "My Cool Table" }
           rows={ this.state.rows }
           tableMode={ this.state.tableMode }
         />
+        <StatusBoard
+          rows={ this.state.rows }
+          tableMode={ this.state.tableMode.toString() }
+        />
       </div>
     )
+  }
+
+  public componentDidMount() {
+    this.addRow()
   }
 
   private addRow() {

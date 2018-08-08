@@ -1,4 +1,5 @@
 import * as React from 'react'
+import './StatusBoard.css'
 
 import { ITableRow } from './types/table'
 
@@ -8,7 +9,7 @@ export interface IStatusBoardProps {
 }
 
 const StatusBoard: React.SFC<IStatusBoardProps> = (props) => (
-  <div>
+  <div className="status-board">
     <div className="status-board__count">
       <h2>Number of Rows: { props.rows.length }</h2>
     </div>

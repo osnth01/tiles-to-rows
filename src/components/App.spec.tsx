@@ -27,11 +27,13 @@ describe('App component', () => {
   it('should increase the number of rows when addRowButton is clicked', () => {
     const { component, addRowButton } = setup()
 
+    const initialRows: ITableRow[] = component.state('rows')
+
     addRowButton.simulate('click')
 
     const rows: ITableRow[] = component.state('rows')
 
-    expect(rows.length).toBe(1)
+    expect(rows.length).toBe(initialRows.length + 1)
   })
 
   it('should switch the tableMode to tiles when tiles button is clicked', () => {

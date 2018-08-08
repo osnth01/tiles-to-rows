@@ -1,6 +1,8 @@
 .table__content__row {
   border: 1px solid black;
   margin-bottom: 20px;
+  width: 100%;
+  transition: width 0.2s;
 }
 
 .table__content__row--tile {
