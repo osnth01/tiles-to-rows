@@ -2,7 +2,7 @@ import * as React from 'react'
 import { shallow } from 'enzyme'
 import TableRow from './TableRow'
 import { ITableRowProps } from './TableRow'
-import { TableMode } from './types/table'
+import { TableMode } from './App'
 
 function setup(props: ITableRowProps) {
   const component = shallow(

@@ -1,7 +1,8 @@
 import * as React from 'react'
 import Table from './Table'
 import { ITableProps } from './Table'
-import { ITableRow, TableMode } from './types/table'
+import { ITableRow } from './types/table'
+import { TableMode } from './App'
 import { render } from 'enzyme'
 
 function setup(props: ITableProps) {

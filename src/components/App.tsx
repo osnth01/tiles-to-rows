@@ -3,7 +3,12 @@ import * as uuidv1 from 'uuid/v1'
 import './App.css'
 
 import Table from './Table'
-import { ITableRow, TableMode } from './types/table'
+import { ITableRow } from './types/table'
+
+export enum TableMode {
+  rows,
+  tiles
+}
 
 export interface AppProps {
 }
@@ -23,6 +28,7 @@ class App extends React.Component<AppProps, AppState> {
     }
 
     this.addRow = this.addRow.bind(this)
+    this.switchMode = this.switchMode.bind(this)
   }
 
   public render() {
@@ -34,6 +40,20 @@ class App extends React.Component<AppProps, AppState> {
           onClick={ this.addRow }
         >
           Add row
+        </button>
+        <button
+          className="tiles-mode-button"
+          onClick={ () => { this.switchMode(TableMode.tiles) } }
+          disabled={ this.state.tableMode === TableMode.tiles }
+        >
+          Tiles mode
+        </button>
+        <button
+          className="rows-mode-button"
+          onClick={ () => { this.switchMode(TableMode.rows) } }
+          disabled={ this.state.tableMode === TableMode.rows }
+        >
+          Rows mode
         </button>
         <Table
           headerTitle={ "My Cool Table" }
@@ -52,6 +72,12 @@ class App extends React.Component<AppProps, AppState> {
           id: uuidv1()
         }
       ]
+    })
+  }
+
+  private switchMode(mode: TableMode) {
+    this.setState({
+      tableMode: mode
     })
   }
 }

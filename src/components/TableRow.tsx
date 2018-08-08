@@ -1,6 +1,6 @@
 import * as React from 'react'
 import './TableRow.css'
-import { TableMode } from './types/table'
+import { TableMode } from './App'
 
 export interface ITableRowProps {
   mode: TableMode
