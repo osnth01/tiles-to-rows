@@ -1,0 +1,7 @@
+.table__content__row {
+  border: 1px solid black;
+}
+
+.table__content__row--tile {
+  width: 50%;
+}

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import App from './App'
 import { shallow } from 'enzyme'
-import { TableRow } from './types/table'
+import { ITableRow } from './types/table'
 
 function setup() {
   const component = shallow(<App />)
@@ -25,7 +25,7 @@ describe('App component', () => {
 
     addRowButton.simulate('click')
 
-    const rows:TableRow[]  = component.state('rows')
+    const rows: ITableRow[]  = component.state('rows')
 
     expect(rows.length).toBe(1)
   })

@@ -1,21 +1,22 @@
 import * as React from 'react'
 import './Table.css'
-import { TableProps, TableRow } from './types/table'
+import { ITableProps, ITableRow } from './types/table'
+import TableRow from './TableRow'
 
-const Table: React.SFC<TableProps> = (props) => (
+const Table: React.SFC<ITableProps> = (props) => (
   <div className="table">
     <div className="table__header">
       <h3>{ props.headerTitle }</h3>
     </div>
     <div className="table__content">
       {
-        props.rows.map((row: TableRow) => {
+        props.rows.map((row: ITableRow) => {
           return (
-            <div
+            <TableRow
+              id={ row.id }
+              mode={ row.mode }
               key={ row.id }
-              className="table__content__row" >
-              Row
-            </div>
+            />
           )
         })
       }

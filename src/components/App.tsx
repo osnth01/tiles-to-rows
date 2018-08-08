@@ -3,13 +3,13 @@ import * as uuidv1 from 'uuid/v1'
 import './App.css'
 
 import Table from './Table'
-import { TableRow } from './types/table'
+import { ITableRow } from './types/table'
 
 export interface AppProps {
 }
 
 export interface AppState {
-  rows: TableRow[]
+  rows: ITableRow[]
 }
 
 class App extends React.Component<AppProps, AppState> {
@@ -46,7 +46,8 @@ class App extends React.Component<AppProps, AppState> {
       rows: [
         ...this.state.rows,
         {
-          id: uuidv1()
+          id: uuidv1(),
+          mode: 'tiles'
         }
       ]
     })
