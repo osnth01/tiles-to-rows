@@ -2,9 +2,18 @@
   border: 1px solid black;
   margin-bottom: 20px;
   width: 100%;
-  transition: width 0.2s;
+  height: 30px;
+  line-height: 30px;
+  transition: width 0.2s, height 0.2s, line-height 0.2s;
+  padding-left: 20px;
 }
 
 .table__content__row--tile {
-  width: 50%;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin-right: 20px;
+  text-align: center;
+  line-height: 100px;
+  padding: 0px;
 }
